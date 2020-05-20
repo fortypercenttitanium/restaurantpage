@@ -22,7 +22,7 @@ body {
     z-index: -1;
     height: 100%;
     width: 100%;
-    background-image: url('/dist/images/burgerbackground.jpg');
+    background-image: url('./images/burgerbackground.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -33,7 +33,7 @@ body {
     position: fixed;
     width: 100%;
     max-height: 10rem;
-    background-image: url('/dist/images/bannerbg.png');
+    background-image: url('./images/bannerbg.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -164,6 +164,7 @@ body {
 
 .img-modal {
     display: none;
+    margin-bottom: 2rem;
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -184,6 +185,7 @@ body {
 
 .modal-map {
     width: 80%;
+    max-width: 70rem;
     margin: 0 auto auto;
 }
 

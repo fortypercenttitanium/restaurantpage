@@ -6,7 +6,7 @@ const subtitle = DOM.newElement('h2', 'subtitle')
     subtitle.textContent = "Serving chumps since the year 3000"
 
 const cta = DOM.newElement('img', 'cta')
-    cta.src = '/dist/images/ordernow.png'
+    cta.src = './images/ordernow.png'
 
 homeWindow.appendChild(subtitle)
 homeWindow.appendChild(cta)

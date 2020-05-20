@@ -7,7 +7,7 @@ const title = DOM.newElement('h1', 'title')
 
 const menu = DOM.newElement('img', 'menu')
 
-menu.src = '/dist/images/menu.png'
+menu.src = './images/menu.png'
 
 menuWindow.appendChild(title)
 menuWindow.appendChild(menu)

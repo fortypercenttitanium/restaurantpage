@@ -14,8 +14,8 @@ contactInfo.innerHTML =
     (555) 555-1234`
 
 closeModal.textContent = 'close'
-map.src = '/dist/images/map.png'
-modalMap.src = '/dist/images/mapzoom.png'
+map.src = './images/map.png'
+modalMap.src = './images/mapzoom.png'
 
 map.addEventListener ('click', () => { imgModal.style.display = 'flex' })
 closeModal.addEventListener ('click', () => { imgModal.style.display = 'none' })
