@@ -1,4 +1,9 @@
 const content = document.querySelector('.content')
+
+const tabs = () => {
+    return document.querySelectorAll('.nav')
+} 
+
 const newElement = (type, classNames) => {
     const element = document.createElement(type)
     if (Array.isArray(classNames)){
@@ -9,4 +14,4 @@ const newElement = (type, classNames) => {
     return element
 }
 
-export { newElement, content }
+export { newElement, content, tabs }

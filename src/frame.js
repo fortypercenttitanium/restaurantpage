@@ -3,46 +3,52 @@ import { homeWindow } from './home.js'
 import { menuWindow } from './menu.js'
 import { contactWindow } from './contact.js'
 
-const banner = DOM.newElement('div', 'banner')
-const logo = DOM.newElement('img', 'logo')
 const navBar = DOM.newElement('nav', 'navbar')
-const homeTab = DOM.newElement('div', ['home-tab', 'nav'])
-const menuTab = DOM.newElement('div', ['menu-tab', 'nav'])
-const contactTab = DOM.newElement('div', ['contact-tab', 'nav'])
 const displayWindow = DOM.newElement('div', 'display-window')
 
-homeTab.textContent = 'home'
-menuTab.textContent = 'menu'
-contactTab.textContent = 'contact'
+class Tab {
+    constructor(name, window) {
+        this.name = name
+        this.class = ['nav', `${name}-tab`]
+        this.parent = DOM.newElement('div', this.class)
+        this.text = DOM.newElement('span', `${name}-tab-text`)
+        this.window = window
+        this.init()
+    }
 
-banner.appendChild(logo)
-navBar.appendChild(homeTab)
-navBar.appendChild(menuTab)
-navBar.appendChild(contactTab)
+    init() {
+        this.text.textContent = this.name
+        this.parent.appendChild(this.text)
+        navBar.appendChild(this.parent)
+    }
 
-const switchWindow = (newWindow) => {
-    displayWindow.childNodes.forEach(child => {
-        displayWindow.removeChild(child)
-    })
-    displayWindow.appendChild(newWindow)
+    switchWindow() {
+        displayWindow.textContent = ''
+        displayWindow.appendChild(this.window)
+        DOM.tabs().forEach(tab => {
+            tab.classList.remove('active')
+        })
+        this.parent.classList.add('active')
+    }
 }
 
-homeTab.addEventListener('click', () => {
-    switchWindow(homeWindow)
-})
-menuTab.addEventListener('click', () => {
-    switchWindow(menuWindow)
-})
-contactTab.addEventListener('click', () => {
-    switchWindow(contactWindow)
+const homeTab = new Tab('home', homeWindow)
+const menuTab = new Tab('menu', menuWindow)
+const contactTab = new Tab('contact', contactWindow)
+
+navBar.addEventListener('click', e => {
+    if (e.target.textContent === 'home') {
+        homeTab.switchWindow()
+    } else if (e.target.textContent === 'menu') {
+        menuTab.switchWindow()
+    } else if (e.target.textContent === 'contact') {
+        contactTab.switchWindow()
+    }
 })
 
+homeTab.switchWindow()
+
 export {
-    banner,
-    logo,
     navBar,
-    homeTab,
-    menuTab,
-    contactTab,
     displayWindow,
 }
