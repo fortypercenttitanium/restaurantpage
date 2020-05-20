@@ -10,7 +10,7 @@ const titleTwo = DOM.newElement('h1', ['header-title', 'banner-child'])
 
 titleOne.textContent = "Bender's"
 titleTwo.textContent = "Burgers"
-logo.src = '/images/bbicon.png'
+logo.src = '/dist/images/bbicon.png'
 
 banCon1.appendChild(titleOne)
 banCon2.appendChild(logo)
