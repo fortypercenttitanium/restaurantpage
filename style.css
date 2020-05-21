@@ -41,12 +41,6 @@ body {
     z-index: 2;
 }
 
-.ban-con {
-    display: flex;
-    flex: 1;
-    text-align: center;
-}
-
 .ban-con h1 {
     font-size: 3rem;
 }
@@ -63,18 +57,30 @@ body {
     margin-right: 10%;
 }
 
+.ban-con {
+    display: flex;
+    flex-grow: 1;
+    text-align: center;
+}
+
 .logo {
     height: 90%;
     text-align: center;
     padding: 0 2rem;
 }
 
-.navbar {
-    margin: 0 auto;
+.navbar-bg {
     display: flex;
+    width: 100%;
     position: fixed;
     top: 10rem;
     background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2;
+}
+
+.navbar {
+    margin: 0 auto;
+    display: flex;
     width: 50%;
     margin-left: 25%;
     min-width: 20rem;
@@ -91,7 +97,6 @@ body {
 
 .active {
     border-bottom: solid red 3px;
-    margin-top: 3px;
 }
 
 .nav:hover {
@@ -195,12 +200,9 @@ body {
         font-size: calc(1rem + 3vw);
     }
 
-    .ban-con:first-child {
-        margin-left: 10%;
-    }
-    
-    .ban-con:last-child {
-        margin-right: 10%;
+    .ban-con {
+        width: 33%;
+        margin: 0 auto;
     }
 
     .logo {
