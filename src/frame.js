@@ -3,6 +3,7 @@ import { homeWindow } from './home.js'
 import { menuWindow } from './menu.js'
 import { contactWindow } from './contact.js'
 
+const navBarBG = DOM.newElement('div', 'navbar-bg')
 const navBar = DOM.newElement('nav', 'navbar')
 const displayWindow = DOM.newElement('div', 'display-window')
 
@@ -46,9 +47,10 @@ navBar.addEventListener('click', e => {
     }
 })
 
+navBarBG.appendChild(navBar)
 homeTab.switchWindow()
 
 export {
-    navBar,
+    navBarBG,
     displayWindow,
 }

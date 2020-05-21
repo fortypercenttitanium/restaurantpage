@@ -4,7 +4,7 @@ import { banner } from './header.js'
 
 const bgimg = DOM.newElement('div', 'bgimg')
 
-const renderItems = [bgimg, banner, frame.navBar, frame.displayWindow]
+const renderItems = [bgimg, banner, frame.navBarBG, frame.displayWindow]
 
 const render = () => {
     renderItems.forEach(item => {
